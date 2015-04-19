@@ -1,55 +1,5 @@
-{ "push": {
-      "name": "cmbant/cosmo-desktop"
-  },
+{ 
   "builders": [
-    {
-      "boot_command": [
-        "<esc><esc><enter><wait>",
-        "/install/vmlinuz auto",
-        " console-setup/ask_detect=false",
-        " console-setup/layoutcode=us",
-        " console-setup/modelcode=pc105",
-        " debconf/frontend=noninteractive",
-        " debian-installer=en_US",
-        " fb=false",
-        " initrd=/install/initrd.gz",
-        " kbd-chooser/method=us",
-        " keyboard-configuration/layout=USA",
-        " keyboard-configuration/variant=USA",
-        " locale=en_US",
-        " netcfg/get_domain=vm",
-        " netcfg/get_hostname={{ user `hostname` }}",
-        " noapic",
-        " passwd/user-fullname={{ user `ssh_fullname` }}",
-        " passwd/user-password={{ user `ssh_password` }}",
-        " passwd/user-password-again={{ user `ssh_password` }}",
-        " passwd/username={{ user `ssh_username` }}",
-        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
-        " -- ",
-        "<enter>"
-      ],
-      "disk_size": 40960,
-      "guest_os_type": "ubuntu-64",
-      "headless": "{{ user `headless` }}",
-      "http_directory": "http",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
-      "iso_urls": [
-        "{{ user `iso_path` }}/{{ user `iso_name` }}",
-        "{{ user `iso_url` }}"
-      ],
-      "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
-      "ssh_password": "{{ user `ssh_password` }}",
-      "ssh_username": "{{ user `ssh_username` }}",
-      "ssh_wait_timeout": "10000s",
-      "tools_upload_flavor": "linux",
-      "type": "vmware-iso",
-      "vm_name": "ubuntu1404-desktop",
-      "vmx_data": {
-        "memsize": "1024",
-        "numvcpus": "1"
-      }
-    },
     {
       "boot_command": [
         "<esc><esc><enter><wait>",
@@ -102,26 +52,12 @@
     }
   ],
   "post-processors": [
-        {
-            "type": "atlas",
-            "only": ["vmware-iso"],
-            "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "vmware_desktop",
-                "version": "0.0.1"
-            }
-        },
-        {
-            "type": "atlas",
-            "only": ["virtualbox-iso"],
-            "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "virtualbox",
-                "version": "0.0.1"
-            }
-        }
+    {
+      "keep_input_artifact": true,
+      "output": "box/cmbant/ubuntu-test.box",
+      "type": "vagrant",
+      "vagrantfile_template": "tpl/vagrantfile-ubuntu1404-desktop.tpl"
+    }
   ],
   "provisioners": [
     {
