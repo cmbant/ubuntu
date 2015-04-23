@@ -7,7 +7,8 @@
   "instance_type": "m3.large",
   "spot_price": "0.25",
   "ssh_username": "ubuntu",
-  "ami_name": "starcluster-Ubuntu-14.04-gcc6-cosmo",
+  "ami_name": "starcluster-Ubuntu-14.04-gcc6",
+  "ami_description": "Starcluster with gcc/gfortran 6.0 build and openBLAS",
   "launch_block_device_mappings": [
     {
       "device_name": "/dev/sdb",
@@ -19,7 +20,13 @@
   }
 } ],
   "provisioners": [
-    {  "environment_vars": [
+   {
+     "type": "file",
+     "source": "files/motd.txt",
+     "destination": "/etc/update-motd.d/00-starcluster"
+    },
+    {
+    "environment_vars": [
         "CLEANUP_PAUSE={{user `cleanup_pause`}}",
         "UPDATE={{user `update`}}",
         "INSTALL_VAGRANT_KEY={{user `install_vagrant_key`}}"
@@ -33,7 +40,8 @@
         "script/python.sh",
         "script/latex.sh",
         "script/source_build.sh",
-        "script/clean_all.sh"
+        "script/clean_all.sh",
+        "script/cleanup.sh"
       ],
       "type": "shell"
     }

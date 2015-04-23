@@ -1,0 +1,47 @@
+#!/bin/sh
+cat<<"EOF"
+          _                 _           _
+__/\_____| |_ __ _ _ __ ___| |_   _ ___| |_ ___ _ __
+\    / __| __/ _` | '__/ __| | | | / __| __/ _ \ '__|
+/_  _\__ \ || (_| | | | (__| | |_| \__ \ ||  __/ |
+  \/ |___/\__\__,_|_|  \___|_|\__,_|___/\__\___|_|
+
+StarCluster Ubuntu 14.04 AMI
+Software Tools for Academics and Researchers (STAR)
+Homepage: http://star.mit.edu/cluster
+Documentation: http://star.mit.edu/cluster/docs/latest
+Code: https://github.com/jtriley/StarCluster
+Mailing list: http://star.mit.edu/cluster/mailinglist.html
+
+Custom image with GCC 6 and gfortran 6 for F2003/2008 support
+Build by Antony Lewis; Packer: https://github.com/cmbant/ubuntu
+building from Ubuntu 14.04 AMI created by Dr Zoran Ilievski
+(ami-bdeecb8d https://www.youtube.com/channel/UCWTzjwD6ps1GELhvubxLb2Q)
+
+This AMI Contains:
+
+  * Open Grid Scheduler (OGS - formerly SGE) queuing system
+  * HTCondor workload management system
+  * OpenMPI compiled with Open Grid Scheduler support
+  * GCC built from 6.0 repository trunk (many F2003 fixes)
+  * OpenBLAS - Highly optimized Basic Linear Algebra Routines
+  * NumPy/SciPy linked against OpenBlas
+  * Pandas - Data Analysis Library
+  * IPython 1.1.0 with parallel and notebook support
+  * TexLive
+  * Julia 0.3pre
+  * and more! (use 'dpkg -l' to show all installed packages)
+
+Open Grid Scheduler/Condor cheat sheet:
+
+  * qstat/condor_q - show status of batch jobs
+  * qhost/condor_status- show status of hosts, queues, and jobs
+  * qsub/condor_submit - submit batch jobs (e.g. qsub -cwd ./job.sh)
+  * qdel/condor_rm - delete batch jobs (e.g. qdel 7)
+  * qconf - configure Open Grid Scheduler system
+
+Current System Stats:
+
+EOF
+
+landscape-sysinfo | grep -iv 'graph this data'
