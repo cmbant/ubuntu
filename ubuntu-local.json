@@ -84,6 +84,9 @@
         "script/vmtool.sh",
         "script/develop.sh",
         "script/gcc_build.sh",
+        "script/latex.sh",
+        "script/clean_desktop.sh",
+        "script/clean_all.sh",
         "script/cleanup.sh",
         "script/cmtool.sh"
       ],

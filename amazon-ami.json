@@ -1,0 +1,56 @@
+{
+  "builders": [
+  {
+  "type": "amazon-ebs",
+  "region": "us-west-2",
+  "source_ami": "ami-bdeecb8d",
+  "instance_type": "m3.large",
+  "spot_price": "0.25",
+  "ssh_username": "ubuntu",
+  "ami_name": "starcluster-Ubuntu-14.04-gcc6-cosmo",
+  "launch_block_device_mappings": [
+    {
+      "device_name": "/dev/sdb",
+      "virtual_name": "ephemeral0"
+    }],
+  "tags": {
+    "OS_Version": "Ubuntu",
+    "Release": "Latest"
+  }
+} ],
+  "provisioners": [
+    {  "environment_vars": [
+        "CLEANUP_PAUSE={{user `cleanup_pause`}}",
+        "UPDATE={{user `update`}}",
+        "INSTALL_VAGRANT_KEY={{user `install_vagrant_key`}}"
+      ],
+      "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'",
+      "scripts": [
+        "script/ami_setup.sh",
+        "script/swapspace.sh",
+        "script/develop.sh",
+        "script/gcc_build.sh",
+        "script/python.sh",
+        "script/latex.sh",
+        "script/source_build.sh",
+        "script/clean_all.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "cleanup_pause": "",
+    "headless": "",
+    "install_vagrant_key": true,
+    "hostname": "ubuntu",
+    "ssh_fullname": "ubuntu",
+    "ssh_password": "ubuntu",
+    "ssh_username": "ubuntu",
+    "update": "true",
+    "version": "0.0.1",
+    "atlas_username": "{{env `ATLAS_USERNAME`}}",
+    "atlas_name": "{{env `ATLAS_NAME`}}"
+  }
+
+}
+

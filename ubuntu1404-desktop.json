@@ -109,7 +109,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "vmware_desktop",
-                "version": "0.0.1"
+                "version": "0.0.2"
             }
         },
         {
@@ -119,7 +119,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.0.1"
+                "version": "0.0.2"
             }
         }
   ],
@@ -148,6 +148,9 @@
         "script/vmtool.sh",
         "script/develop.sh",
         "script/gcc_build.sh",
+        "script/latex.sh",
+        "script/clean_desktop.sh",
+        "script/clean_all.sh",
         "script/cleanup.sh",
         "script/cmtool.sh"
       ],
@@ -174,7 +177,7 @@
     "ssh_password": "ubuntu",
     "ssh_username": "ubuntu",
     "update": "true",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "atlas_username": "{{env `ATLAS_USERNAME`}}",
     "atlas_name": "{{env `ATLAS_NAME`}}"
   }

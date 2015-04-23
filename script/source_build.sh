@@ -6,7 +6,7 @@ tar zxvf cfitsio_latest.tar.gz
 cd cfitsio
 ./configure --prefix=/usr
 make -j 2
-make install
+sudo make install
 make clean
 popd
 rm -Rf /tmp/cfitsio*
