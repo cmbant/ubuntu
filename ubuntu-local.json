@@ -1,4 +1,4 @@
-{ 
+{
   "builders": [
     {
       "boot_command": [
@@ -45,6 +45,12 @@
           "{{.Name}}",
           "--cpus",
           "1"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vram",
+          "16"
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
@@ -85,13 +91,21 @@
         "script/develop.sh",
         "script/gcc_build.sh",
         "script/latex.sh",
+        "script/python.sh",
+        "script/source_build.sh",
+        "script/IDE.sh",
         "script/clean_desktop.sh",
         "script/clean_all.sh",
         "script/cleanup.sh",
         "script/cmtool.sh"
       ],
       "type": "shell"
+    },
+    {
+    "script": "script/user_config.sh",
+    "type": "shell"
     }
+
   ],
   "variables": {
     "cleanup_pause": "",

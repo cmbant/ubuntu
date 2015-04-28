@@ -23,7 +23,7 @@
    {
      "type": "file",
      "source": "files/motd.txt",
-     "destination": "/etc/update-motd.d/00-starcluster"
+     "destination": "/tmp/motd.txt"
     },
     {
     "environment_vars": [
@@ -37,11 +37,10 @@
         "script/swapspace.sh",
         "script/develop.sh",
         "script/gcc_build.sh",
-        "script/python.sh",
         "script/latex.sh",
+        "script/python.sh",
         "script/source_build.sh",
-        "script/clean_all.sh",
-        "script/cleanup.sh"
+        "script/clean_all.sh"
       ],
       "type": "shell"
     }

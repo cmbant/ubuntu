@@ -3,8 +3,22 @@ apt-get install -y openjdk-7-jre
 pushd
 cd /tmp
 wget "http://downloads.sourceforge.net/project/cbfortran/CBFortran_v1.2/CodeBlocks_Fortran_v1.2_Linux64.tar.bz2?use_mirror=autoselect&ts=$(date +%s)"
-tar -jxvf -C /opt download
+tar -jxvf CodeBlo*
+rm -f *.tar*
 mv CodeBlo* /opt/
+cat <<EOT > /opt/CodeBlocks_Fortran_v1.2_Linux64/CodeBlocks.desktop
+[Desktop Entry]
+Version=1.0
+Name=CodeBlocks
+Comment=Fortran IDE
+Exec=/opt/CodeBlocks_Fortran_v1.2_Linux64/codeblocks_run.sh
+Icon=/opt/CodeBlocks_Fortran_v1.2_Linux64/codeblocks.png
+Terminal=false
+Type=Application
+Categories=Utility;
+EOT
+desktop-file-install /opt/CodeBlocks_Fortran_v1.2_Linux64/CodeBlocks.desktop
+#added to launcher in user_config.sh run as user
 popd
 
 #pushd

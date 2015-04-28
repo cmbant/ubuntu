@@ -1,5 +1,5 @@
 { "push": {
-      "name": "cmbant/cosmo-desktop"
+      "name": "cmbant/dev-ubuntu-desktop"
   },
   "builders": [
     {
@@ -95,6 +95,12 @@
           "{{.Name}}",
           "--cpus",
           "1"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vram",
+          "16"
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
@@ -103,13 +109,17 @@
   ],
   "post-processors": [
         {
+            "type": "vagrant",
+            "keep_input_artifact": false
+        },
+        {
             "type": "atlas",
             "only": ["vmware-iso"],
             "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "vmware_desktop",
-                "version": "0.0.2"
+                "version": "0.0.3"
             }
         },
         {
@@ -119,7 +129,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.0.2"
+                "version": "0.0.3"
             }
         }
   ],
@@ -149,12 +159,19 @@
         "script/develop.sh",
         "script/gcc_build.sh",
         "script/latex.sh",
+        "script/python.sh",
+        "script/source_build.sh",
+        "script/IDE.sh",
         "script/clean_desktop.sh",
         "script/clean_all.sh",
         "script/cleanup.sh",
         "script/cmtool.sh"
       ],
       "type": "shell"
+    },
+     {
+    "script": "script/user_config.sh",
+    "type": "shell"
     }
   ],
   "variables": {
@@ -177,7 +194,7 @@
     "ssh_password": "ubuntu",
     "ssh_username": "ubuntu",
     "update": "true",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "atlas_username": "{{env `ATLAS_USERNAME`}}",
     "atlas_name": "{{env `ATLAS_NAME`}}"
   }
