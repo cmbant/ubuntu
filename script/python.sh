@@ -12,4 +12,4 @@ sudo apt-get install -y \
 
 sudo apt-get install -y --no-install-recommends python-pandas
 
-sudo pip install --upgrade ipython[all]
+# sudo pip install --upgrade ipython[all]

@@ -5,11 +5,11 @@
         "<esc><esc><enter><wait>",
         "/install/vmlinuz noapic ",
         "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
-        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=gb ",
         "hostname={{ user `hostname` }} ",
         "fb=false debconf/frontend=noninteractive ",
-        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
-        "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=GB ",
+        "keyboard-configuration/variant=GB console-setup/ask_detect=false ",
         "passwd/user-fullname={{ user `ssh_fullname` }} ",
         "passwd/user-password={{ user `ssh_password` }} ",
         "passwd/user-password-again={{ user `ssh_password` }} ",
@@ -38,13 +38,13 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "1024"
+          "2048"
         ],
         [
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "1"
+          "2"
         ],
         [
           "modifyvm",
@@ -54,7 +54,7 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "ubuntu1404-desktop"
+      "vm_name": "ubuntu1404-desktop-2"
     }
   ],
   "post-processors": [

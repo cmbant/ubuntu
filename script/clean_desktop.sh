@@ -6,4 +6,6 @@ apt-get purge -y ttf-indic-fonts-core ttf-kacst-one ttf-khmeros-core ttf-lao ttf
 apt-get -y purge popularity-contest installation-report wireless-tools wpasupplicant
 apt-get remove  -y --purge libreoffice* unity-webapps-common
 
+mkdir logs
+mv /home/ubuntu/gcc/*log* logs
 rm -Rf /home/ubuntu/gcc*
