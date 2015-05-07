@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eux
 
 echo "==> New things for developer machine ready for gcc building etc."
 

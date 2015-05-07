@@ -5,9 +5,8 @@
   "region": "us-west-2",
   "source_ami": "ami-bdeecb8d",
   "instance_type": "m3.large",
-  "spot_price": "0.25",
   "ssh_username": "ubuntu",
-  "ami_name": "starcluster-Ubuntu-14.04-gcc6",
+  "ami_name": "starcluster-Ubuntu-14.04-gcc6-2015-5-7",
   "ami_description": "Starcluster with gcc/gfortran 6.0 build and openBLAS",
   "launch_block_device_mappings": [
     {

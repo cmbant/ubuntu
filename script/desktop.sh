@@ -24,9 +24,8 @@ if [[ $DISTRIB_RELEASE == 12.04 ]]; then
 
 elif [[ $DISTRIB_RELEASE == 14.04 ]]; then
     echo "==> Installing ubunutu-desktop"
-#    apt-get install -y --no-install-recommends ubuntu-desktop
-#    apt-get install -y gnome-terminal
-    apt-get install -y ubuntu-desktop
+    apt-get install -y --no-install-recommends ubuntu-desktop gnome-terminal \
+       firefox unity-lens-applications gedit gir1.2-gtksource-3.0
 
     USERNAME=${SSH_USER}
     LIGHTDM_CONFIG=/etc/lightdm/lightdm.conf
@@ -37,7 +36,7 @@ elif [[ $DISTRIB_RELEASE == 14.04 ]]; then
     echo "# Enabling automatic login" >> $GDM_CUSTOM_CONFIG
     echo "AutomaticLoginEnable=True" >> $GDM_CUSTOM_CONFIG
     echo "AutomaticLoginEnable=${USERNAME}" >> $GDM_CUSTOM_CONFIG
-    
+
     echo "==> Configuring lightdm autologin"
     #if [ -f $LIGHTDM_CONFIG ]; then
         echo "[SeatDefaults]" >> $LIGHTDM_CONFIG

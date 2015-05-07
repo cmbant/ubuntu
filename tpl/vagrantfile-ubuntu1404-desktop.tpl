@@ -3,7 +3,9 @@
 
 Vagrant.configure("2") do |config|
     config.vm.define "vagrant-ubuntu1404-desktop"
-    config.vm.box = "ubuntu1404-desktop"
+    config.vm.box = "cosmo3"
+    config.ssh.username  = "ubuntu"
+    config.ssh.password  = "ubuntu"
 
     config.vm.provider :virtualbox do |v, override|
         v.gui = true

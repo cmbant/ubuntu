@@ -1,3 +1,5 @@
+#!/bin/bash -eux
+
 pushd /tmp
 wget "http://downloads.sourceforge.net/project/cbfortran/CBFortran_v1.2/CodeBlocks_Fortran_v1.2_Linux64.tar.bz2?use_mirror=autoselect&ts=$(date +%s)"
 tar -jxvf CodeBlo*
