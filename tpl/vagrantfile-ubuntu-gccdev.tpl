@@ -2,8 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.define "ubuntu-desktop-gccdev"
-    config.vm.box = "cosmo4"
     config.ssh.username  = "ubuntu"
     config.ssh.password  = "ubuntu"
 

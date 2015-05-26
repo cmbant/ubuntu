@@ -1,5 +1,5 @@
 { "push": {
-      "name": "cmbant/dev-ubuntu-desktop",
+      "name": "cmbant/ubuntu-desktop-dev",
       "vcs": true
   },
   "builders": [
@@ -25,7 +25,7 @@
         " passwd/user-password={{ user `ssh_password` }}",
         " passwd/user-password-again={{ user `ssh_password` }}",
         " passwd/username={{ user `ssh_username` }}",
-        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-1504.cfg",
         " -- ",
         "<enter>"
       ],
@@ -45,9 +45,9 @@
       "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "linux",
       "type": "vmware-iso",
-      "vm_name": "ubuntu1404-desktop",
+      "vm_name": "ubuntu-desktop-gccdev",
       "vmx_data": {
-        "memsize": "2048",
+        "memsize": "1024",
         "numvcpus": "1"
       }
     },
@@ -89,7 +89,7 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "2048"
+          "1024"
         ],
         [
           "modifyvm",
@@ -105,13 +105,14 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "ubuntu1404-desktop"
+      "vm_name": "ubuntu-desktop-gccdev"
     }
   ],
   "post-processors": [
         {
             "type": "vagrant",
             "keep_input_artifact": false
+            "vagrantfile_template": "tpl/vagrantfile-ubuntu-gccdev.tpl"
         },
         {
             "type": "atlas",
@@ -184,10 +185,10 @@
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
     "install_vagrant_key": true,
-    "iso_checksum": "3bfa6eac84d527380d0cc52db9092cde127f161e",
-    "iso_name": "ubuntu-14.04.2-server-amd64.iso",
+    "iso_checksum": "d10248965c2c749df6bcce9f2f90f16a2e75e843",
+    "iso_name": "ubuntu-15.04-server-amd64.iso",
     "iso_path": "iso",
-    "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.2-server-amd64.iso",
+    "iso_url": "http://releases.ubuntu.com/15.04/ubuntu-15.04-server-amd64.iso",
     "no_proxy": "{{env `no_proxy`}}",
     "rsync_proxy": "{{env `rsync_proxy`}}",
     "hostname": "ubuntu",
