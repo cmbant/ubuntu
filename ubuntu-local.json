@@ -41,7 +41,7 @@
         [ "modifyvm", "{{.Name}}", "--accelerate3d", "on"]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "ubuntu1404-desktop-4"
+      "vm_name": "ubuntu-desktop-gccdev"
     }
   ],
   "post-processors": [
@@ -49,15 +49,10 @@
       "keep_input_artifact": true,
       "output": "box/cmbant/cosmo3.box",
       "type": "vagrant",
-      "vagrantfile_template": "tpl/vagrantfile-ubuntu1404-desktop.tpl"
+      "vagrantfile_template": "tpl/vagrantfile-ubuntu1504-desktop.tpl"
     }
   ],
   "provisioners": [
-    {
-     "type": "file",
-     "source": "script/user_config.sh",
-     "destination": "/tmp/user_config.sh"
-    },
     {
       "environment_vars": [
         "CM={{user `cm`}}",
@@ -92,7 +87,12 @@
         "script/cmtool.sh"
       ],
       "type": "shell"
-    }
+    },
+    {
+     "type": "file",
+     "source": "script/user_config.sh",
+     "destination": "/tmp/user_config.sh"
+    },
   ],
   "variables": {
     "cleanup_pause": "",
@@ -103,10 +103,10 @@
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
     "install_vagrant_key": true,
-    "iso_checksum": "3bfa6eac84d527380d0cc52db9092cde127f161e",
-    "iso_name": "ubuntu-14.04.2-server-amd64.iso",
+    "iso_checksum": "d10248965c2c749df6bcce9f2f90f16a2e75e843",
+    "iso_name": "ubuntu-15.04-server-amd64.iso",
     "iso_path": "iso",
-    "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.2-server-amd64.iso",
+    "iso_url": "http://releases.ubuntu.com/15.04/ubuntu-15.04-server-amd64.iso",
     "no_proxy": "{{env `no_proxy`}}",
     "rsync_proxy": "{{env `rsync_proxy`}}",
     "hostname": "ubuntu",
