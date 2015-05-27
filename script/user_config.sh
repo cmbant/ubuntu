@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Sets useful default icons and turns off annoying screen locks
+
 #dbus-session-run? Currently have to run this manually
 
 export DISPLAY=:0

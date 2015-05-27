@@ -12,4 +12,7 @@ sudo apt-get install -y \
 
 sudo apt-get install -y --no-install-recommends python-pandas
 
-# sudo pip install --upgrade ipython[all]
+sudo pip install starcluster
+
+echo "export PYTHONPATH=/vagrant/python:$PYTHONPATH" >> /home/ubuntu/.bashrc
+
