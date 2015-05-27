@@ -11,6 +11,9 @@ echo "==> Removing unnecessary desktop files"
 #apt-get remove  -y --purge libreoffice* unity-webapps-common
 #apt-get remove  -y --purge thunderbird empathy transmission-gtk speech-dispatcher
 
+#hack for vagrant bug https://github.com/mitchellh/vagrant/issues/5377
+chmod a-x /sbin/initctl
+
 mkdir logs
 mv /home/ubuntu/gcc/*log* logs
 rm -Rf /home/ubuntu/gcc*
@@ -20,7 +23,5 @@ rm -Rf /home/ubuntu/Videos
 rm -Rf /home/ubuntu/Templates
 
 
-#hack for vagrant bug https://github.com/mitchellh/vagrant/issues/5377
-chmod a-x /sbin/initctl
 
 
