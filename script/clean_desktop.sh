@@ -20,3 +20,7 @@ rm -Rf /home/ubuntu/Videos
 rm -Rf /home/ubuntu/Templates
 
 
+#hack for vagrant bug https://github.com/mitchellh/vagrant/issues/5377
+chmod a-x /sbin/initctl
+
+

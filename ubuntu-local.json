@@ -124,7 +124,6 @@
     "ssh_password": "ubuntu",
     "ssh_username": "ubuntu",
     "update": "true",
-    "version": "0.0.1",
     "atlas_username": "{{env `ATLAS_USERNAME`}}",
     "atlas_name": "{{env `ATLAS_NAME`}}"
   }

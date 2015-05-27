@@ -111,7 +111,7 @@
   "post-processors": [
         {
             "type": "vagrant",
-            "keep_input_artifact": false
+            "keep_input_artifact": false,
             "vagrantfile_template": "tpl/vagrantfile-ubuntu-gccdev.tpl"
         },
         {
@@ -121,7 +121,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "vmware_desktop",
-                "version": "0.0.3"
+                "version": "0.0.4"
             }
         },
         {
@@ -131,7 +131,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.0.3"
+                "version": "0.0.4"
             }
         }
   ],
@@ -170,10 +170,6 @@
         "script/cmtool.sh"
       ],
       "type": "shell"
-    },
-     {
-    "script": "script/user_config.sh",
-    "type": "shell"
     }
   ],
   "variables": {
@@ -196,7 +192,6 @@
     "ssh_password": "ubuntu",
     "ssh_username": "ubuntu",
     "update": "true",
-    "version": "0.0.3",
     "atlas_username": "{{env `ATLAS_USERNAME`}}",
     "atlas_name": "{{env `ATLAS_NAME`}}"
   }
