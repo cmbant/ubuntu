@@ -51,7 +51,7 @@
         [ "modifyvm", "{{.Name}}", "--accelerate3d", "on"]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "ubuntu-desktop-gccdev"
+      "vm_name": "CosmoBox"
     }
   ],
   "post-processors": [
@@ -91,6 +91,7 @@
         "script/python.sh",
         "script/source_build.sh",
         "script/IDE.sh",
+        "script/desktop_run.sh",
         "script/clean_desktop.sh",
         "script/clean_all.sh",
         "script/cleanup.sh",

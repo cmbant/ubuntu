@@ -2,9 +2,14 @@
 
 SSH_USER=${SSH_USERNAME:-vagrant}
 
+echo "==> Getting updates"
+
+apt-get -y update
+apt-get -y upgrade
+
 echo "==> Installing ubunutu-desktop"
 apt-get install -y --no-install-recommends ubuntu-desktop gnome-terminal \
-   firefox unity-lens-applications gedit gir1.2-gtksource-3.0
+   firefox unity-lens-applications gedit gir1.2-gtksource-3.0 xterm
 
 USERNAME=${SSH_USER}
 LIGHTDM_CONFIG=/etc/lightdm/lightdm.conf

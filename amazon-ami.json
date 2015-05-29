@@ -6,8 +6,8 @@
   "source_ami": "ami-bdeecb8d",
   "instance_type": "m3.large",
   "ssh_username": "ubuntu",
-  "ami_name": "starcluster-Ubuntu-14.04-gcc6-2015-5-7",
-  "ami_description": "Starcluster with gcc/gfortran 6.0 build and openBLAS",
+  "ami_name": "CosmoBox-StarCluster-2015-5-28",
+  "ami_description": "Starcluster with Ubuntu 14.04, gcc/gfortran 6.0 build and openBLAS",
   "launch_block_device_mappings": [
     {
       "device_name": "/dev/sdb",
@@ -42,6 +42,20 @@
         "script/clean_all.sh"
       ],
       "type": "shell"
+    },
+    {
+      "type": "shell",
+       "inline": ["mkdir /home/ubuntu/scripts"]
+    },
+    {
+     "type": "file",
+     "source": "script/gcc_build.sh",
+     "destination": "/home/ubuntu/scripts/gcc_build.sh"
+    },
+    {
+     "type": "file",
+     "source": "script/pico_build.sh",
+     "destination": "/home/ubuntu/scripts/pico_build.sh"
     }
   ],
   "variables": {
