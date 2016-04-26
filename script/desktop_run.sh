@@ -22,6 +22,8 @@ EOT
 
 chown -R ubuntu:ubuntu /home/ubuntu/
 
+adduser ubuntu vboxsf
+
 #turn off automatic updates
 #cat <<EOT > /etc/apt/apt.conf.d/10periodic
 #APT::Periodic::Update-Package-Lists "0";
