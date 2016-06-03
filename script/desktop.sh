@@ -11,6 +11,9 @@ echo "==> Installing ubunutu-desktop"
 apt-get install -y --no-install-recommends ubuntu-desktop gnome-terminal \
    firefox unity-lens-applications gedit gir1.2-gtksource-3.0 xterm
 
+#try this?
+apt-get install -y ubuntu-desktop
+
 USERNAME=${SSH_USER}
 LIGHTDM_CONFIG=/etc/lightdm/lightdm.conf
 GDM_CUSTOM_CONFIG=/etc/gdm/custom.conf
@@ -22,7 +25,5 @@ echo "AutomaticLoginEnable=True" >> $GDM_CUSTOM_CONFIG
 echo "AutomaticLoginEnable=${USERNAME}" >> $GDM_CUSTOM_CONFIG
 
 echo "==> Configuring lightdm autologin"
-#if [ -f $LIGHTDM_CONFIG ]; then
-	echo "[SeatDefaults]" >> $LIGHTDM_CONFIG
-	echo "autologin-user=${USERNAME}" >> $LIGHTDM_CONFIG
-#fi
+echo "[SeatDefaults]" >> $LIGHTDM_CONFIG
+echo "autologin-user=${USERNAME}" >> $LIGHTDM_CONFIG

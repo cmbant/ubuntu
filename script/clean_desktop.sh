@@ -8,5 +8,3 @@ rm -Rf /home/ubuntu/Music
 rm -Rf /home/ubuntu/Videos
 rm -Rf /home/ubuntu/Templates
 
-
-

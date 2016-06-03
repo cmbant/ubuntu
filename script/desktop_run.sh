@@ -31,6 +31,8 @@ adduser ubuntu vboxsf
 #APT::Periodic::AutocleanInterval "0";
 #EOT
 
-
+#prevent problem with terminal not starting
+locale-gen
+localectl set-locale LANG="en_US.UTF-8"
 
 

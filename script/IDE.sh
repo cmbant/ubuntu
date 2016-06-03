@@ -1,22 +1,22 @@
 #!/bin/bash -eux
 
 pushd /tmp
-wget "http://downloads.sourceforge.net/project/cbfortran/CBFortran_v1.2/CodeBlocks_Fortran_v1.2_Linux64.tar.bz2?use_mirror=autoselect&ts=$(date +%s)"
+wget "http://downloads.sourceforge.net/project/cbfortran/CBFortran_v1.3/CodeBlocks_Fortran_v1.3_Linux64.tar.bz2?use_mirror=autoselect&ts=$(date +%s)"
 tar -jxvf CodeBlo*
 rm -f *.tar*
 mv CodeBlo* /opt/
-cat <<EOT > /opt/CodeBlocks_Fortran_v1.2_Linux64/CodeBlocks.desktop
+cat <<EOT > /opt/CodeBlocks_Fortran_v1.3_Linux64/CodeBlocks.desktop
 [Desktop Entry]
 Version=1.0
 Name=CodeBlocks
 Comment=Fortran IDE
-Exec=/opt/CodeBlocks_Fortran_v1.2_Linux64/codeblocks_run.sh
-Icon=/opt/CodeBlocks_Fortran_v1.2_Linux64/codeblocks.png
+Exec=/opt/CodeBlocks_Fortran_v1.3_Linux64/codeblocks_run.sh
+Icon=/opt/CodeBlocks_Fortran_v1.3_Linux64/share/codeblocks/images/codeblocks.png
 Terminal=false
 Type=Application
 Categories=Utility;
 EOT
-desktop-file-install /opt/CodeBlocks_Fortran_v1.2_Linux64/CodeBlocks.desktop
+desktop-file-install /opt/CodeBlocks_Fortran_v1.3_Linux64/CodeBlocks.desktop
 #added to launcher in user_config.sh run as user
 popd
 

@@ -1,6 +1,9 @@
  echo "==> Cloning gcc repository"
- git clone git://gcc.gnu.org/git/gcc.git --branch vehre/head_cosmo --single-branch --depth=1
- pushd gcc
+ #git clone git://gcc.gnu.org/git/gcc.git --branch gcc-6-branch --single-branch --depth=1
+ wget https://codeload.github.com/gcc-mirror/gcc/zip/gcc-6-branch 
+ unzip gcc-6-branch 
+ rm -f gcc-6-branch 
+ pushd gcc-gcc-6-branch
  mkdir objdir
  cd objdir
  echo "==> Configure gcc"
@@ -8,9 +11,9 @@
  ../configure --enable-languages=c,c++,fortran --disable-multilib \
     --disable-bootstrap --enable-checking=release --build=x86_64-linux-gnu
  echo "==> Build gcc (takes a while and a lot of memory)"
- make -j 2 2> /home/ubuntu/gcc/gcc_build_errlog.txt > /home/ubuntu/gcc/gcc_build_log.txt
+ make -j 2 2> /home/ubuntu/gcc-gcc-6-branch/gcc_build_errlog.txt > /home/ubuntu/gcc-gcc-6-branch/gcc_build_log.txt
  echo "==> Install gcc"
- sudo make install gcc > /home/ubuntu/gcc/gcc_install_log.txt
+ sudo make install gcc > /home/ubuntu/gcc-gcc-6-branch/gcc_install_log.txt
  sudo make distclean
  cd ..
  rm -Rf objdir

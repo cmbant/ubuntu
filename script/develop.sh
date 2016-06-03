@@ -15,6 +15,7 @@ sudo apt-get install -y \
      m4 \
      openmpi-bin \
      libopenmpi-dev \
-     wget
+     wget \
+     unzip
 
 

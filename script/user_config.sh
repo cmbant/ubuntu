@@ -20,3 +20,4 @@ dconf write /org/gnome/desktop/screensaver/lock-enabled false
 
 #only want to run once, delete calling file
 echo "X-GNOME-Autostart-enabled=false" >> /home/ubuntu/.config/autostart/startup.desktop
+
