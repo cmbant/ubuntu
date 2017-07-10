@@ -3,8 +3,11 @@ sudo apt-get install -y \
  python-pyside \
  python-matplotlib \
  python-scipy \
+ python-h5py \
+ python-sympy \
  cython \
- ipython
+ ipython \
+ ipython-notebook
 
 # may want these e.g. for scipy upgrade install via pip
 # libfreetype6-dev \
