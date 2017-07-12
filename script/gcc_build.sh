@@ -1,3 +1,5 @@
+#should be able to use e.g. https://gist.github.com/application2000/73fd6f4bf1be6600a2cf9f56315a2d91
+
  echo "==> Cloning gcc repository"
  #git clone git://gcc.gnu.org/git/gcc.git --branch gcc-6-branch --single-branch --depth=1
  wget https://codeload.github.com/gcc-mirror/gcc/zip/gcc-6-branch 
