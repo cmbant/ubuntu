@@ -1,7 +1,7 @@
 #CFITSIO
 
 pushd /tmp
-wget ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/cfitsio_latest.tar.gz
+wget ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/cfitsio3280.tar.gz
 tar zxvf cfitsio_latest.tar.gz
 cd cfitsio
 ./configure --prefix=/usr

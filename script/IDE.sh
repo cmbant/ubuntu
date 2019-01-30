@@ -1,8 +1,8 @@
 #!/bin/bash -eux
 
 pushd /tmp
-wget "http://downloads.sourceforge.net/project/cbfortran/CBFortran_v1.3/CodeBlocks_Fortran_v1.3_Linux64.tar.bz2?use_mirror=autoselect&ts=$(date +%s)"
-tar -jxvf CodeBlo*
+wget -q "http://downloads.sourceforge.net/project/cbfortran/CBFortran_v1.3/CodeBlocks_Fortran_v1.3_Linux64.tar.bz2?use_mirror=autoselect&ts=$(date +%s)"
+tar -jxf CodeBlo*
 rm -f *.tar*
 mv CodeBlo* /opt/
 cat <<EOT > /opt/CodeBlocks_Fortran_v1.3_Linux64/CodeBlocks.desktop

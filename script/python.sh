@@ -5,7 +5,7 @@ sudo wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh 
  && conda config --set always_yes yes --set changeps1 no \
  && conda update -q conda \
  && conda info -a \
- && conda create -q -n cosmobox-environment python=2.7 atlas numpy scipy matplotlib pandas sympy h5py cython ipython jupyter pyside yaml \
+ && conda create -q -n cosmobox-environment python=2.7 scipy matplotlib pandas sympy cython ipython jupyter pyside PyYAML \
  && rm -f miniconda.sh \
  && conda clean --yes -i -t -l -s -p
 
@@ -31,7 +31,7 @@ sudo apt-get install -y qt4-default
 #
 #sudo apt-get install -y --no-install-recommends python-pandas
 
-sudo pip install starcluster
+#sudo pip install starcluster
 
 echo "export PYTHONPATH=/vagrant/python:$PYTHONPATH" >> /home/ubuntu/.bashrc
 

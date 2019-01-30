@@ -1,6 +1,9 @@
 mkdir /home/ubuntu/.config
 mkdir /home/ubuntu/.config/autostart
 
+sudo apt-get install -y --no-install-recommends gnome-panel
+
+
 cat <<EOT > /home/ubuntu/.config/autostart/startup.desktop
 [Desktop Entry]
 Version=1.0
