@@ -108,11 +108,6 @@
     },
     {
      "type": "file",
-     "source": "script/user_config.sh",
-     "destination": "/home/ubuntu/scripts/user_config.sh"
-    },
-    {
-     "type": "file",
      "source": "script/pico_build.sh",
      "destination": "/home/ubuntu/scripts/pico_build.sh"
     }

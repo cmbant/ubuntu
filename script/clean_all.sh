@@ -28,7 +28,7 @@ rm -f /root/.bash_history
 # Clean up log files
 find /var/log -type f | while read f; do echo -ne '' > $f; done;
 
-echo "==> Installed packages"
-dpkg -l
+#echo "==> Installed packages"
+#dpkg -l
 
 sync
